@@ -1,97 +1,492 @@
-@charset utf-8;
+@charset "utf-8";
 
-*{
-	padding: 0;
+/*-------------------------------------
+--------- PROPRIETES GENERALES --------
+--------------------------------------*/
+
+/* ----- Correction bug ---- */
+
+*
+{
 	margin: 0;
-}
-img{
-	width: 100%;
-	height: 0 auto;
+	padding: 0;
 }
 
-/*------Header------*/
+*,
+*:before,
+*:after
+{
+	box-sizing: border-box;
+}
+
+
+.clearfix:before,
+.clearfix:after
+{
+	content: " ";
+	display: table;
+}
+
+.clearfix:after
+{
+	clear: both;
+}
+
+
+body
+{
+    width: 100%;
+    background: white;
+    font-family: 'Raleway', Arial, sans-serif;
+    font-size: 62.5%;
+    color: black;
+
+}
+
+img
+{
+	display: block;
+}
+
+/*-------------------------------------
+-------------- HEADER -----------------
+--------------------------------------*/
 
 header{
-	display: flex;
-	justify-content: space-between;
+
 }
 
+
+/*-----Logo-----*/
+
 .logo img{
-	width: 250px;
+	width: 200px;
+	height: auto;
+	float: left;
+	margin-left: 30px;
 }
 
 /*-----Navigateur-----*/
+
+nav
+{
+	float: right;
+	width: 100%;
+	max-width: 700px;
+	margin-top: 50px;
+}
+
 nav ul{
 
 	list-style: none;
-	padding: 0;
-	display: block;
+	float: right;
+	text-transform: uppercase;
 }
 nav ul li{
 	display: inline;
+	font-size: 1.5rem;
+	margin-right: 30px;
 }
 nav ul li a{
 	text-decoration: none;
 	color: black;
-	font-size: 24px;
-	line-height: 500%;
-	margin: 10px;
+}
+
+nav ul li a:hover{
+	border-bottom: solid 2px black;
 }
 
 #navlien{
 	font-weight: bold;
 }
 
-/*------Main-------*/
-.wrap{/*Premiere chose qu'on voit quand on arrive sur la page d'accueil*/
-	left: 20%;
-	height: 860px;
 
+/*-------------------------------------
+--------------- INDEX -----------------
+--------------------------------------*/
+
+main
+{
+	width: 100%;
 }
+
+/*------ENTETE-------*/
+
+section.entete
+{
+	width: 100%;
+}
+
 .titre{
-	position: relative;
-	margin: 200px 0 0 20%;
+	width: 70%;
+	margin: 90px auto 40px auto;
+}
 
+.titre h2{
+	font-size: 3.5rem;
+	text-align: center;
+	font-family: 'Josefin Sans', Arial, sans-serif;
+	margin-top: 40px;
+	font-weight: 400;
 }
-.titre p{
-	font-size: 35px;
+
+.titre ul
+{
+	list-style-type: none;
+	width: 85%;
+	margin: auto;
 }
+
+.titre ul li
+{
+	float: left;
+	width: 20%;
+}
+
 
 .titre img{
-	width: 100px;
-	height: 100px;
-	margin: 10px;
 
+	max-width: 50%;
+	width: auto;
+	height: auto;
+	margin: auto;
 }
 
 .button{
-	border:4px ;
-	border-style: solid;
 	float: right;
-	margin-top: 1%;
-	padding: 2%;
-	margin-right: 10%
+	width: 25%;
+	margin-right: 10%;
+	font-size: 1.3rem;
+	border: 3px solid black;
+	padding: 1%;
+	color: black;
+	transition: 0.25s ease;
 }
 
-.button a{
+.button img{
+	float: right;
+}
+
+.titre a{
+	text-decoration: none;
+}
+
+.button:hover {
+	transform: scale(1.1);
+}
+
+img.scroll
+{
+	max-width: 2%;
+	width: 100%;
+	height: auto;
+	margin: 60px auto;
+}
+
+/*-------DEFINITION CONCEPT------*/
+
+section.def
+{
+	margin-top: 120px;
+	background-color: #f9f9f9;
+}
+
+.containerDef{
+	width: 100%;
+	max-width: 960px;
+	margin: auto;
+	padding: 2%;
+}
+.containerDef h3
+{
+	font-family: 'Josefin Sans', Arial, sans-serif;
+	float: left;
+	font-size: 4rem;
+	font-weight: 400;
+	line-height: 90%;
+	width: 50%;
+}
+/*WhatSape en rose*/
+.containerDef h3 strong
+{
+	display: inline-block;
+	margin-left: 20%;
+	font-weight: 400;
+	color: #E6C3C1
+}
+
+/*Point d'inerrogation en gros*/
+.containerDef h3 span
+{
+	font-size: 7rem;
+}
+
+.containerDef p
+{
+	float: right;
+	width: 50%;
+	font-size: 1rem;
+	line-height: 130%;
+	padding: 2%;
+}
+
+.containerDef a{
+	color: #E6C3C1;
+	font-weight: bold;
+	text-decoration: none;
+	display: inline-block;
+	margin-top: 20px;
+	font-size: 1.3rem;
+}
+
+/*------- CATEGORIES -------*/
+
+section.categories
+{
+	width: 80%;
+	margin: auto;
+	padding: 2% 0;
+}
+
+section.categories h3{
+	font-family: 'Josefin Sans', Arial, sans-serif;
+	font-weight: 400;
+	font-size: 1.5rem;
+	margin: 30px auto;
+	text-transform: uppercase;
+}
+
+.categories ul{
+	list-style-type: none;
+	width: 100%;
+}
+
+.categories li{
+	float: left;
+	width: 25%;
+	transition: ease 0.25s;
+}
+
+.categories a{
 	text-decoration: none;
 	color: black;
 }
 
-/*-------Partie 2------*/
-.text1{
 
-}
-div p{
-	font-size: 50px;
+.categories li:hover {
+	transform: scale(1.1);
 }
 
-#WhatSape{
-	color: #F6CED8;
-	text-shadow: 1px 2px 2px #000;
+
+.categories img{
+	max-width: 90%;
+	width: auto;
+	height: auto;
+	margin: auto;
 }
 
-#pointinterrogation{
+.categories h4
+{
+	text-align: center;
+	font-size: 1.8rem;
+	font-weight: 400;
+	margin-top: 15px;
+}
+
+/*------- EN CE MOMENT -------*/
+
+section.en-ce-moment
+{
+	width: 80%;
+	margin: auto;
+}
+
+.en-ce-moment h3
+{
+	font-family: 'Josefin Sans', Arial, sans-serif;
+	font-weight: 400;
+	font-size: 1.5rem;
+	margin: 50px auto;
+}
+
+/*------- AVIS -------*/
+
+section.avis
+{
+	width: 80%;
+	margin: auto;
+}
+
+.avis h3
+{
+	font-family: 'Josefin Sans', Arial, sans-serif;
+	font-weight: 400;
+	font-size: 1.5rem;
+	margin: 50px auto;
+	text-transform: uppercase;
+}
+
+.avis article
+{
+	width: 50%;
+	float: left;
+	
+}
+
+.avis article figure
+{
+	width: 65%;
+	margin: auto;
+}
+
+.avis article img
+{
+	float: left;
+	width: auto;
+	height: auto;
+	max-width: 50%;
+}
+
+.avis article figcaption
+{
+
+	float: right;
+	width: 45%;
+	font-size: 2rem;
+	margin-top: 150px;
+}
+
+.avis article blockquote
+{
+	width: 72%;
+	margin: auto;
+	font-size: 1.2rem;
+	line-height: 130%;
+	background: url('../img-layout/quotes-gauche.png') no-repeat top left, url('../img-layout/quotes-droite.png') no-repeat bottom right;
+	background-size: 50px 35px;
+	padding: 7% 0;
+}
+
+.avis p
+{
+	width: 90%;
+	margin: auto;
+}
+
+
+/*-------------------------------------
+------------- PAGE CONTEXTE -----------
+--------------------------------------*/
+
+section.definition
+{
+	 width: 100%;
+	 max-width: 960px;
+	 margin: auto;
+}
+
+.definition h2 
+{
+	font-family: 'Josefin Sans', Arial, sans-serif;
+	font-size: 4rem;
+	font-weight: 400;
+	line-height: 90%;
+	margin-bottom: 70px;
+}
+/*WhatSape en rose*/
+.definition h2 strong
+{
+	display: inline-block;
+	margin-left: 10%;
+	font-weight: 400;
+	color: #E6C3C1
+}
+
+/*Point d'inerrogation en gros*/
+.definition h2 span
+{
+	font-size: 7rem;
+}
+
+.definition article img
+{
+	float: left;
+	max-width: 30%;	
+	height: auto;
+	width: auto;
+	margin-top: 100px;
+}
+
+
+.definition article .content
+{
+	float: right;
+	width: 60%;
+	font-size: 1.2rem;
+	line-height: 130%;
+}
+
+.content p
+{
+	width: 90%;
+	float: left;
+	text-align: justify;
+}
+
+.content ul
+{
+	width: 85%;
+	list-style-type: none;
+	float: right;
+	margin-top: 60px;
+}
+
+.content ul li
+{
+	margin-bottom: 30px;
+	font-family: 'Josefin Sans', Arial, sans-serif;
+	float: right;
+}
+
+.content ul li span
+{
+	font-size: 5rem;
 	font-weight: bold;
-	font-size: 100px
+	display: inline-block;
+	margin-right: 30px;
+}
+
+ .vert
+{
+	color: #CCE5B9;
+}
+
+.violet
+{
+	color: #D9C3DC;
+}
+
+.bleu
+{
+	color: #BFE4DA;
+}
+
+/*-------------------------------------
+---------------- FOOTER ---------------
+--------------------------------------*/
+
+footer
+{
+	margin-top: 100px;
+	background: #F2F2F2;
+	border-top: #BDBDBD solid 1px;
+	height: 100px;
+}
+
+footer p
+{
+	width: 60%;
+	margin: 40px auto 0 auto;
+	text-align: center;
+	font-size: 0.8rem;
 }
