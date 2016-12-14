@@ -679,6 +679,36 @@ section.annonces
 
 }
 
+/*	-- W50 Pour la page edit-form.php --	*/
+.w50 {
+	float: left;
+	width: 50%;
+	text-align: center;
+	margin-top: 100px; 
+}
+
+.w50 figure {
+	width: 60%;
+	margin: 0 auto;
+}
+
+.w50 figure img,
+.w33 figure img {
+	max-width: 100%;
+	width: auto;
+	height: auto;
+	display: block;
+}
+
+.w50 form {
+	text-align: center;
+	font-size: 25px;
+}
+
+form p {
+	margin-bottom: 30px;
+}
+
 /*-------------------------------------
 ---------------- FOOTER ---------------
 --------------------------------------*/

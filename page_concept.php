@@ -17,7 +17,7 @@
 				<h2 class="concept">Concept</h2>
 				<h2>Qu'est-ce que<br/><strong>What'Sape</strong><span>?</span></h2>
 				<article class="clearfix">
-					<img src="../img-layout/robeee.png" alt="Robe">
+					<img src="img-layout/robeee.png" alt="Robe">
 					<div class="content clearfix">
 						<p>WhatSape a un concept tout simple: le prêt de vêtements. En quelques clics, vous pouvez réserver une robe, un accessoire, une tenue de sport ou un costard, gratuitement et facilement. Il n'est plus nécessaire de dépenser en catastrophe votre argent pour cette occasion spéciale que vous aviez oublié ou ce sport que vous vouliez essayer. En plus de réserver, vous pouvez également mettre en ligne vos propres affaires et faire du troc.</p>
 						<ul>
