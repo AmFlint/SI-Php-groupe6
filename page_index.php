@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
 	<meta charset="utf-8">
 	<title>What'Sape</title>
@@ -9,18 +9,9 @@
 	<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700|Raleway" rel="stylesheet">
 </head>
 <body>
-	<header class="clearfix">
-		<div class="logo">
-			<a href=""><img src="img-layout/logo.png" alt="Logo"></a>
-		</div>
-		<nav class="navigation">
-			<ul class="clearfix">
-				<li><a href="#">Concept</a></li>
-				<li><a href="#" id="navlien">Poster une annonce</a></li>
-				<li><a href="#">Contact</a></li>
-			</ul>
-		</nav>
-	</header>
+<?php 
+ include_once "include/header.php";
+ ?>
 	<main>
 		<section class="entete">
 			<div class="titre">
@@ -33,9 +24,9 @@
 				</ul>		
 				<h2>Le site d'échange de vêtements entre particuliers</h2>
 			</div>
-			<a href=""><div class="button">TOUTES LES ANNONCES<img src="img-layout/polygon.png" alt="flèche"></div></a>
+			<a href="" class="clearfix"><div class="button">TOUTES LES ANNONCES<img src="img-layout/polygon.png" alt="flèche"></div></a>
+			<img src="img-layout/poly.png" alt="flèche" class="scroll">
 		</section>
-		<img src="img-layout/poly.png" alt="flèche" class="scroll">
 		<section class="def">
 			<div class="containerDef clearfix">
 				<h3>Qu'est-ce que<br/><strong>What'Sape</strong><span>?</span></h3>
@@ -81,7 +72,8 @@
 			</article>
 		</section>
 	</main>
-	<footer>
-	</footer>
+<?php 
+ include_once "include/footer.php";
+ ?>
 </body>
 </html>
