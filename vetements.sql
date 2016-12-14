@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Dec 13, 2016 at 12:04 PM
+-- Generation Time: Dec 14, 2016 at 02:52 PM
 -- Server version: 5.5.49-log
 -- PHP Version: 7.0.9
 
@@ -43,16 +43,16 @@ CREATE TABLE IF NOT EXISTS `vetements` (
 --
 
 INSERT INTO `vetements` (`id`, `img_chemin`, `img_dur`, `titre`, `description`, `taille`, `sexe`, `style`, `visible`) VALUES
-(2, 'accessoires-femme1.jpg', '', 'Collier clé', 'Collier féminin et discret', '', 'F', 'accessoires', 1),
-(3, 'accessoires-femme2.jpg', '', 'Sac rose', 'Petit sac rose pratique', '', 'F', 'accessoires', 1),
-(4, 'accessoires-femme3.jpg', '', 'Sac noir', 'Petit sac noir pratique', '', 'F', 'accessoires', 1),
-(5, 'accessoires-femme4.jpg', '', 'Collier argent', 'Gros collier couleur argent', '', 'F', 'accessoires', 1),
-(6, 'accessoires-femme5.jpg', '', 'Sac bleu', 'Petit sac bleu original', '', 'F', 'accessoires', 1),
-(7, 'accessoires-homme1.jpg', '', 'Montre bleu et rouge', 'Montre à gros cadran et bracelet', '', 'H', 'accessoires', 1),
-(8, 'accessoires-homme2.jpg', '', 'Montre épaisse', 'Montre à gros cadran avec bracelet cuir épais', '', 'H', 'accessoires', 1),
-(9, 'accessoires-homme3.jpg', '', 'Sac de voyage', 'Sac de voyage pratique et résistant', '', 'H', 'accessoires', 1),
-(10, 'accessoires-homme4.jpg', '', 'Bonnet South Park', 'Bonnet original inspiré de Stan', '', 'H', 'accessoires', 1),
-(11, 'accessoires-homme5.jpg', '', 'Casquette classique', 'Casquette noire et jaune', '', 'H', 'accessoires', 1),
+(2, 'accessoires-femme1.jpg', '', 'Collier clé', 'Collier féminin et discret', 'S', 'F', 'accessoires', 1),
+(3, 'accessoires-femme2.jpg', '', 'Sac rose', 'Petit sac rose pratique', 'M', 'F', 'accessoires', 1),
+(4, 'accessoires-femme3.jpg', '', 'Sac noir', 'Petit sac noir pratique', 'M', 'F', 'accessoires', 1),
+(5, 'accessoires-femme4.jpg', '', 'Collier argent', 'Gros collier couleur argent', 'L', 'F', 'accessoires', 1),
+(6, 'accessoires-femme5.jpg', '', 'Sac bleu', 'Petit sac bleu original', 'S', 'F', 'accessoires', 1),
+(7, 'accessoires-homme1.jpg', '', 'Montre bleu et rouge', 'Montre à gros cadran et bracelet', 'L', 'H', 'accessoires', 1),
+(8, 'accessoires-homme2.jpg', '', 'Montre épaisse', 'Montre à gros cadran avec bracelet cuir épais', 'L', 'H', 'accessoires', 1),
+(9, 'accessoires-homme3.jpg', '', 'Sac de voyage', 'Sac de voyage pratique et résistant', 'L', 'H', 'accessoires', 1),
+(10, 'accessoires-homme4.jpg', '', 'Bonnet South Park', 'Bonnet original inspiré de Stan', 'M', 'H', 'accessoires', 1),
+(11, 'accessoires-homme5.jpg', '', 'Casquette classique', 'Casquette noire et jaune', 'S', 'H', 'accessoires', 1),
 (12, 'casual-femme-chemise.jpg', '', 'Chemise à motifs', 'Petite chemise blanche à motifs', 'S', 'F', 'casual', 1),
 (13, 'casual-femme-haut1.jpg', '', 'Haut d''été', 'Petit haut léger en dentelles', 'S', 'F', 'casual', 1),
 (14, 'casual-femme-pull1.jpg', '', 'Hoodie rose', 'Pull à capuche rose pâle', 'M', 'F', 'casual', 1),
