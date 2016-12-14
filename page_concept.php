@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 	<head>
 		<meta charset="UTF-8">
 		<title>What'Sape - Concept</title>
@@ -9,26 +9,28 @@
 		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700|Raleway" rel="stylesheet">
 	</head>
 	<body>
-		<header>
-		</header>
+	<?php 
+ 	include_once "include/header.php";
+ 	?>
 		<main>
 			<section class="definition">
+				<h2 class="concept">Concept</h2>
 				<h2>Qu'est-ce que<br/><strong>What'Sape</strong><span>?</span></h2>
 				<article class="clearfix">
 					<img src="../img-layout/robeee.png" alt="Robe">
 					<div class="content clearfix">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi veniam quia magnam esse eius ex laborum possimus vel aliquam ducimus beatae distinctio, accusamus, dolore dignissimos explicabo, provident temporibus amet non. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, reiciendis, ratione! Adipisci velit quam quibusdam odit vitae soluta vel omnis, rem ut alias perspiciatis ipsam, impedit, assumenda repudiandae hic ratione. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, reiciendis, ratione! Adipisci velit quam quibusdam odit vitae soluta vel omnis, rem ut alias perspiciatis ipsam, impedit, assumenda repudiandae hic ratione!</p>
+						<p>WhatSape a un concept tout simple: le prêt de vêtements. En quelques clics, vous pouvez réserver une robe, un accessoire, une tenue de sport ou un costard, gratuitement et facilement. Il n'est plus nécessaire de dépenser en catastrophe votre argent pour cette occasion spéciale que vous aviez oublié ou ce sport que vous vouliez essayer. En plus de réserver, vous pouvez également mettre en ligne vos propres affaires et faire du troc.</p>
 						<ul>
-							<li><span class="vert">1</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-							<li><span class="violet">2</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
-							<li><span class="bleu">3</span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</li>
+							<li><span class="vert">1</span>Je me connecte ou je crée un compte utilisateur en quelques étapes rapides.</li>
+							<li><span class="violet">2</span>Je remplis le formulaire nécessaire pour mettre en ligne mon vêtement, tel que le style, la taille et une description courte le concernant.</li>
+							<li><span class="bleu">3</span>Voilà ! Mon vêtement est en ligne et prêt à être réservé. Je peux également parcourir les différentes catégories pour aussi trouver quelque chose.</li>
 						</ul>
 					</div>
 				</article>
 			</section>	
 		</main>
-		<footer>
-		 	<p>© WhatSape - Semaine intensive HETIC 2016. All Rights Reserved. Le présent site Web et l’ensemble de son contenu, y compris textes, images fixes ou animées, sont protégés par les droits d’auteur.<br/>Une production de: Kaouthar AZZOUNE, Déborah BAUD, Marie CHARLES, Romain FERRON, Antoine MASSELOT</p>
-		</footer>
+		<?php 
+ 		include_once "include/footer.php";
+ 		?>
 	</body>
 </html>
