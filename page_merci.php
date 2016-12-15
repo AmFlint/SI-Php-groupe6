@@ -20,7 +20,7 @@
 
 	<div class="textcentre">
 		<p>Nous vous remercions pour votre <br> confiance. <br> Votre annonce sera publiée aprés validation par l'admistrateur. <br> :)</p> <br>
-		<a href="#">REVENIR AUX ANNONCES</a>
+		<a href="page_annonces.php">REVENIR AUX ANNONCES</a>
 	</div>
 
 	<div class="photodroite">

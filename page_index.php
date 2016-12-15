@@ -1,3 +1,6 @@
+<?php
+require_once "php/connect.php";
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -24,27 +27,46 @@
 				</ul>		
 				<h2>Le site d'échange de vêtements entre particuliers</h2>
 			</div>
-			<a href="" class="clearfix"><div class="button">TOUTES LES ANNONCES<img src="img-layout/polygon.png" alt="flèche"></div></a>
+			<a href="page_annonces.php" class="clearfix"><div class="button">TOUTES LES ANNONCES<img src="img-layout/polygon.png" alt="flèche"></div></a>
 			<img src="img-layout/poly.png" alt="flèche" class="scroll">
 		</section>
 		<section class="def">
 			<div class="containerDef clearfix">
 				<h3>Qu'est-ce que<br/><strong>What'Sape</strong><span>?</span></h3>
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi veniam quia magnam esse eius ex laborum possimus vel aliquam ducimus beatae distinctio, accusamus, dolore dignissimos explicabo, provident temporibus amet non. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-				<br><a href="">> En savoir plus</a></p>
+				<br><a href="page_concept.php">> En savoir plus</a></p>
 			</div>
 		</section>	
 		<section class="categories">	
 			<h3>CATéGORIES</h3>
 			<ul class="clearfix">
-				<li><a href=""><img src="img-content/soleil.png" alt="Casual"><h4>CASUAL</h4></a></li>
-				<li><a href=""><img src="img-content/noeud.png" alt="occasions"><h4>OCCASIONS</h4></a></li>
-				<li><a href=""><img src="img-content/running.png" alt="Sport"><h4>SPORT</h4></a></li>
-				<li><a href=""><img src="img-content/sac.png" alt="Accessoires"><h4>ACCESSOIRES</h4></a></li>
+				<li><a href="page_annonces.php?style=casual"><img src="img-content/soleil.png" alt="Casual"><h4>CASUAL</h4></a></li>
+				<li><a href="page_annonces.php?style=occasion"><img src="img-content/noeud.png" alt="occasions"><h4>OCCASIONS</h4></a></li>
+				<li><a href="page_annonces.php?style=sport"><img src="img-content/running.png" alt="Sport"><h4>SPORT</h4></a></li>
+				<li><a href="page_annonces.php?style=accessoires"><img src="img-content/sac.png" alt="Accessoires"><h4>ACCESSOIRES</h4></a></li>
 			</ul>
 		</section>
 		<section class="en-ce-moment">	
 			<h3>DISPONIBLES EN CE MOMENT...</h3>
+			<div class="content-annonces">
+			<?php
+				// écriture requête SQL , récupérer les images dans la table vêtements pour les 6 premiers éléments visibles
+				$sql = "SELECT `id`, `img_chemin` FROM `vetements` WHERE `visible` = 1 ORDER BY ID DESC LIMIT 0,6";
+				// Préparer la requête SQL 
+				$stmt = $pdo->prepare($sql);
+				// Exécuter la requête SQL 
+				$stmt->execute();
+				// Pour tous les éléments de la table récupérés, les afficher dans une div w33 avec un lien menant à la page annonce_traite qui génèrera une page pour l'annonce sélectionnée
+				while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):?>
+				<div class="w33">
+					<figure>
+						<a href="page_annonce_traite.php?id=<?=$row['id']?>">
+					    	<img src="img-content/<?= $row["img_chemin"]?>" alt="">
+						</a>
+					</figure>
+				</div>
+				<?php endwhile;?>
+			</div>
 		</section>
 		<section class="avis clearfix">	
 			<h3>Ils ont essayé What'sape</h3>
