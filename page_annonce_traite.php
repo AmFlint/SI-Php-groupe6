@@ -10,22 +10,44 @@ $stmt = $pdo->prepare($sql);
 $stmt->bindValue(":id", $_GET['id']);
 // On exécute la requête SQL
 $stmt->execute();
-// Stocker les informations de la table pour l'élément dans un tableau associatif $row
-while($row = $stmt->fetch(PDO::FETCH_ASSOC)):
-	// Si on bidouille la valeur de visible, on nous retourne vers la page annonces (évite aux visiteurs d'accéder à des articles non visibles)
-	if ($row['visible'] != 1) {
-		header('Location: page_annonces.php');
-	// Si l'élément cliqué est bien "visible = 1" dans la BDD, afficher les informations de l'éléments
-	} else { ?>
-		<div class="wfull">
-			<figure>
-				<img src="img-content/<?=$row['img_chemin']?>" alt="">
-			</figure>
-			<h3><?= $row["titre"]?></h3>
-		    <p><?= $row["description"]?></p>
-		    <p class="phpfloat"><?= $row["taille"]?></p>
-		    <p class="phpfloat"><?= $row["sexe"]?></p>
-		    <p><?= $row["style"]?></p>	
-		</div>
-	<?php }
-endwhile;?>
+?>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Annonce</title>
+		<link rel="stylesheet" type="text/css" href="styles/styles.css">
+		<link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700|Raleway" rel="stylesheet">
+	</head>
+	<body>
+		<?php 
+		include_once "include/header.php";
+		?>
+		<h2 class="h2">Toutes les annonces</h2>
+		<?php
+		// Stocker les informations de la table pour l'élément dans un tableau associatif $row
+		while($row = $stmt->fetch(PDO::FETCH_ASSOC)):
+			// Si on bidouille la valeur de visible, on nous retourne vers la page annonces (évite aux visiteurs d'accéder à des articles non visibles)
+			if ($row['visible'] != 1) {
+				header('Location: page_annonces.php');
+			// Si l'élément cliqué est bien "visible = 1" dans la BDD, afficher les informations de l'éléments
+			} else { ?>
+				<div class="wfull clearfix">
+					<figure>
+						<img src="img-content/<?=$row['img_chemin']?>" alt="">
+					</figure>
+					<div class="text">
+						<h3><?= $row["titre"]?></h3>
+					    <p><?= $row["description"]?></p>
+					    <p class="phpfloat">Taille : <?= $row["taille"]?></p>
+					    <p class="phpfloat">Sexe : <?= $row["sexe"]?></p>
+					    <p>Style : <?= $row["style"]?></p>	
+					    <a href="#" id="boutonvalider">Je veux !</a>
+					</div>
+				</div>
+			<?php }
+		endwhile;
+		include_once "include/footer.php";
+		?>
+	</body>
+</html>

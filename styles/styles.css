@@ -495,7 +495,7 @@ section.annonces
 
 }
 
-.annonces h2 
+.annonces h2
 {
 	
 	font-family: 'Josefin Sans', Arial, sans-serif;
@@ -549,6 +549,31 @@ section.annonces
 {
 	float: right;
 	margin: 8px 0 0 10px;
+}
+
+.les_annonces {
+	width: 80%;
+	margin: 0 auto;
+	font-size: 1.5rem;
+	text-align: center;
+}
+
+.content-annonces h3 {
+	font-size: 1.8rem;
+	margin: 1rem 0;
+	text-align: center;
+}
+
+.content-annonces p {
+	margin-bottom: 1rem;
+}
+
+#filtrer {
+	background-color: #E6C3C1;
+	padding: .1rem 2rem;
+	color: #fff;
+	font : 1.5rem 'Josefin Sans', Arial, sans-serif;
+	margin-top: -1rem;
 }
 
 /* ------------------------------------
@@ -724,6 +749,62 @@ div.w33 {
 
 form p {
 	margin-bottom: 30px;
+}
+
+/*------------------------------------
+------------- PAGE ANNONCE_TRAITE-----
+------------------------------------*/
+
+.wfull {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.wfull figure{
+	float: left;
+	width: 48%;
+	margin-right: 4%;
+}
+
+.wfull figure img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.wfull .text {
+	float: left;
+	width: 48%;
+}
+
+.text {
+	margin-top: 5rem;
+	font-size: 2rem;
+	text-align: center;
+}
+
+.text h3 {
+	color: #E6C3C1;
+	font-size: 2.5rem;
+}
+
+.text h3,
+.text p {
+	margin-bottom: 2rem;
+}
+
+.h2 {
+	font-family: 'Josefin Sans', Arial, sans-serif;
+	font-size: 4rem;
+	font-weight: 400;
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.text a, .text a:visited {
+	color: #000;
+	text-decoration: none;
+	padding: .5rem 2rem
 }
 
 /*-------------------------------------

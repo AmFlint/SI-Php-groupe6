@@ -1,5 +1,12 @@
 <?php
+// Connexion à la base de données
 require_once "php/connect.php";
+// écriture requête SQL , récupérer les images dans la table vêtements pour les 6 premiers éléments visibles
+$sql = "SELECT `id`, `img_chemin`, `titre` FROM `vetements` WHERE `visible` = 1 ORDER BY ID DESC LIMIT 0,6";
+// Préparer la requête SQL 
+$stmt = $pdo->prepare($sql);
+// Exécuter la requête SQL 
+$stmt->execute();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -50,12 +57,6 @@ require_once "php/connect.php";
 			<h3>DISPONIBLES EN CE MOMENT...</h3>
 			<div class="content-annonces">
 			<?php
-				// écriture requête SQL , récupérer les images dans la table vêtements pour les 6 premiers éléments visibles
-				$sql = "SELECT `id`, `img_chemin` FROM `vetements` WHERE `visible` = 1 ORDER BY ID DESC LIMIT 0,6";
-				// Préparer la requête SQL 
-				$stmt = $pdo->prepare($sql);
-				// Exécuter la requête SQL 
-				$stmt->execute();
 				// Pour tous les éléments de la table récupérés, les afficher dans une div w33 avec un lien menant à la page annonce_traite qui génèrera une page pour l'annonce sélectionnée
 				while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):?>
 				<div class="w33">
@@ -64,6 +65,9 @@ require_once "php/connect.php";
 					    	<img src="img-content/<?= $row["img_chemin"]?>" alt="">
 						</a>
 					</figure>
+					<h3>
+						<?= $row["titre"]?>
+					</h3>
 				</div>
 				<?php endwhile;?>
 			</div>
