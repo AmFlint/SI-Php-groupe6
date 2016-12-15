@@ -6,7 +6,7 @@
 			<ul class="clearfix">
 				<li><a href="page_concept.php">Concept</a></li>
 				<li><a href="page_formulaire.php" id="navlien">Poster une annonce</a></li>
-				<li><a href="#">Contact</a></li>
+				<li><a href="page_annonces.php">Consulter</a></li>
 			</ul>
 		</nav>
 	</header>
