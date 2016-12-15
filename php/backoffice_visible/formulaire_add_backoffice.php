@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8">
 		<title>Panel Admin : Ajouter un article</title>
 	</head>
 	<body style="text-align: center;">
@@ -50,7 +51,8 @@
 			 	</select>
 			</p>
 			<p class="clearfix">
-				<input type="submit" id="boutonvalider" value="Envoyer !">
+				<input type="submit" value="Envoyer !"
+				style="padding: 5px 10px; background-color: pink;font-size: 20px;">
 			</p>
 		</form>
 	</body>
