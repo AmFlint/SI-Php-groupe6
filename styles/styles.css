@@ -733,7 +733,7 @@ div.w33 {
 	float: left;
 	width: 50%;
 	text-align: center;
-	margin-top: 100px; 
+	margin-top: 30px; 
 }
 
 .w50 figure {
@@ -757,6 +757,18 @@ div.w33 {
 form p {
 	margin-bottom: 30px;
 }
+
+.recapitulatif {
+	font-size: 20px;
+}
+
+.modif_back {
+	background-color: pink;
+	padding: .3rem 1rem;
+	margin-top: 1rem;
+	font-size: 20px;
+}
+
 
 /*------------------------------------
 ------------- PAGE ANNONCE_TRAITE-----

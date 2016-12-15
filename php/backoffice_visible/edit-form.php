@@ -70,20 +70,25 @@ if (false == $row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 	 			<input type="hidden" name="img" value="<?=$row["img_chemin"]?>">
 				<input type="file" name="image"><br/>
 				<input type="hidden" name="MAX_FILE_SIZE" value="100000">
-				<input type="submit" value="Modifier">
+				<input type="submit" value="Modifier" class="modif_back">
 			</form>
 		</div>
-		<div class="w50">
+		<div class="w50 recapitulatif">
 			<h2>Résumé des données</h2>
 		    <figure>
 		        <img src="../../img-content/<?=$row["img_chemin"]?>">
 		    </figure>
-		    <h3><?= $row["titre"]?></h3>
-		    <p><?= $row["description"]?></p>
-		    <p class="phpfloat"><?= $row["taille"]?></p>
-		    <p class="phpfloat"><?= $row["sexe"]?></p>
-		    <p><?= $row["style"]?></p>
-		    <p>Visible = <?=$row['visible']?></p>
+		    <h3>Titre : <?= $row["titre"]?></h3>
+		    <p>Description : <?= $row["description"]?></p>
+		    <p class="phpfloat">Taille : <?= $row["taille"]?></p>
+		    <p class="phpfloat"> Sexe : <?= $row["sexe"]?></p>
+		    <p>Style : <?= $row["style"]?></p>
+		    <p>Visible = <?if($row['visible'] == 1) {
+		    	echo "Oui";
+		    } else {
+		    	echo "Non";
+		    }
+		    ?></p>
 		</div>
 	</body>
 </html>
