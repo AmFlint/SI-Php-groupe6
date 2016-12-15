@@ -54,8 +54,8 @@
 		 		<label for="description">DESCRIPTION</label> <textarea name="description" id="description" cols="30" rows="5"></textarea><br>
 		 	</p>
 		 	<p class="clearfix">
-		 		<label for="condition">J'accepte les conditions d'utilisation <span style="color:red">*</span></label>
-		 		<input type="checkbox" name="condition" id="condition" required>
+		 		<input type="checkbox" name="condition" id="check" required>
+		 		<label for="condition" id="condition">J'accepte les conditions d'utilisation <span style="color:red">*</span></label>
 		 	</p>
 		 	<p class="clearfix">
 				<input type="submit" id="boutonvalider" value="Envoyer !">
