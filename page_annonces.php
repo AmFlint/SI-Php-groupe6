@@ -61,43 +61,61 @@ require_once "php/connect.php";
 				<div class="content-annonces">
 					<?php
 					// création requête sql
+					// Prendre les informations dans tous les champs de la table vetements (on va chercher des éléments différents en fonction de la valeur récupérée par la méthode get)
 					$sql = "SELECT `id`,`img_chemin`, `titre`, `description`, `taille`, `sexe`, `style`, `visible` FROM `vetements` WHERE 1\n";
+					// On crée une variable sous forme de tableau associatif avec les tailles acceptées
 					$taillesOK = [
 						"S", "M", "L"
 					];
+					// On crée une variable sous forme de tableau associatif avec les valeurs du champ "sexe" acceptées
 					$sexeOK = [
 						"F", "H"
 					];
+					// On crée une variable sous forme de tableau associatif avec les valeurs du champ "style" acceptées
 					$styleOK = [
 						"casual", "occasion", "sport", "accessoires"
 					];
+					// On vérifie si la taille fournie par la variable $_GET['taille'] fait partie des tailles acceptées
 					if (!in_array($_GET['taille'], $taillesOK)) {
+						// Si $_GET['taille'] est différent des tailles autorisées, on prends les éléments de toutes les tailels S, M et L dans la table
 						$sql .= "AND `taille` IN ('S', 'M', 'L')\n";
 					} else {
+						// sinon si $_GET['taille'] est validée, on bindera plus tard la variable à :taille pour la requête SQL
 						$sql .= "AND `taille` = :taille\n";
 					}
 					if (!in_array($_GET['sexe'], $sexeOK)) {
+						// Si la variable sexe récupérée ne fait pas partie du tableau de vérification, on prends les éléments dont les valeurs pour le champ "sexe" sont "H" et "F"
 						$sql .= "AND `sexe` IN ('H', 'F')\n";
 					} else {
+						// Sinon, on ajoute une variable :sexe à la requête sql (bindValue plus loin) 
 						$sql .= "AND `sexe` = :sexe\n";
 					}
 					if (!in_array($_GET['style'], $styleOK)) {
+						// Si la variable style récupérée ne fait pas partie du tableau de vérification, on prend les éléments "occasion", "sport", "casual" et "accessoires" pour le champ "style"
 						$sql .= "AND `style` IN ('occasion', 'sport', 'accessoires', 'casual')\n";
 					} else {
+						// sinon on ajoute une variable :sexe à la requête SQL (bindValue plus loin) 
 						$sql .= "AND `style` = :style\n";
 					}
+					// On précise à la fin de la requête SQL que les éléments récupérées doivent avoir pour valeur "1" sous le champ "visible"
 					$sql .= " AND `visible` = 1";
+					// préparation de la requête SQL
 					$stmt = $pdo->prepare($sql);
+					// On reprend la vérification d'au dessus pour faire le bindvalue si la valeur de $_GET['taille'] est validée précédemment (évite de faire planter le traitement si la valeur n'est pas bonne et que :taille ou :sexe ou :style est assigné sans existait dans la requête SQL)
 					if (in_array($_GET['taille'], $taillesOK)) {
 						$stmt->bindValue(":taille", $_GET['taille']);
 					}
+					// On reprend la vérification d'au dessus pour faire le bindvalue si la valeur de $_GET['sexe'] est validée précédemment
 					if (in_array($_GET['sexe'], $sexeOK)){
 					$stmt->bindValue(":sexe", $_GET['sexe']);
 					}
+					// On reprend la vérification d'au dessus pour faire le bindvalue si la valeur de $_GET['style'] est validée précédemment
 					if (in_array($_GET['style'], $styleOK)){
 					$stmt->bindValue(":style", $_GET['style']);
 					}
+					// Exécution de la requête SQL --> récupération des données
 					$stmt->execute();
+					// Affichage/disposition des données
 					while ($row = $stmt->fetch(PDO::FETCH_ASSOC)):?>
 						<div class="w33">
 						    <figure>
