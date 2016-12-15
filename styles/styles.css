@@ -621,7 +621,7 @@ div.w33 {
 	margin: 10px;
 	width: 100px;
 	height: 100px;
-	margin-left: 80%;
+	margin-left: 70%;
 }
 
 .photogauche,
@@ -667,6 +667,17 @@ div.w33 {
 	width: 40%;
 }
 
+#condition {
+	font-size: 1rem;
+	float: left;
+}
+
+#check {
+	float: left;
+	width: 10%;
+	margin-top: 1.9rem;
+}
+
 .formulaire form p{
 	text-align: center;
 	font-size: 35px;
@@ -697,10 +708,6 @@ div.w33 {
 	float: right;
 }
 
-#condition{
-	width: 100%
-}
-
 #image{
 	margin-top: 30px;
 	font-size:15px;
@@ -718,7 +725,7 @@ div.w33 {
 	width: 100px;
 	height: 50px;
 	border-color: #d4d4d4;
-
+	float: none;
 }
 
 /*	-- W50 Pour la page edit-form.php --	*/
@@ -865,29 +872,33 @@ form p {
 	width: 100%;
 	height: auto;
 	margin-bottom: 20px;
-
+}
 /*-------------------------------------
 ---------------- FOOTER ---------------
 --------------------------------------*/
 
 footer
 {
+	padding-top: 20px;
+	padding-bottom: 20px;
 	margin-top: 100px;
 	background: #F2F2F2;
 	border-top: #BDBDBD solid 1px;
-	height: 100px;
 }
 
 footer p
 {
 	width: 60%;
-	margin: 40px auto 0 auto;
+	margin: 10px auto 0 auto;
 	text-align: center;
 	font-size: 0.8rem;
 }
 
 footer a
 {
-	color: black;
+	
+	margin-left: 45%;
+	color: #E6C3C1;
+	font-size: 2rem;
 	text-decoration: none;
 }
